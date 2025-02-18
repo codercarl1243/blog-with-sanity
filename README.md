@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Learning SanityIO
 
-## Getting Started
+This repository contains the code for a **blog** built using **Sanity IO** as the headless CMS and rendering it in a Next.js frontend.
 
-First, run the development server:
+This tutorial walks through setting up a blog from scratch. If you would like to follow along, the initial video covering the blog setup is available on *youtube (TODO add video link)* and further videos are available covering more complex subjects such as:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+* **Typegen**
+* **Groq functions**; and
+* **Page Builders**
+
+## Topics Covered in video tutorial
+
+* **installation and setup**
+* **How to use GROQ!**  - Sanity’s very own Query Language.
+* **Schemas -**  how they shape the data
+* **PortableText** - introduction to custom components
+* **Singleton Pages**
+
+## 🚀 Blog Features
+
+* **Sanity IO CMS** for structured content management
+* **PortableText** for rich text rendering
+* **Next.js 15** with App Router
+* **Dynamic routing** for blog posts
+* **SEO Optimization** with Next.js metadata
+
+## 📌 Prerequisites
+
+Before starting, ensure you have:
+
+* **Node.js** (>= 18)
+* **Sanity CLI** installed globally (`npm install -g @sanity/cli`)
+* A **Sanity project** (sign up at [sanity.io](https://www.sanity.io/))
+
+## 🛠 Installation & Setup
+
+### 1️⃣ Clone the Repository
+
+```
+git clone https://github.com/codercarl1243/blog-with-sanity
+cd blog-with-sanity
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2️⃣ Install Dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3️⃣ Set Up Sanity Studio
 
-## Learn More
+1. create an .env.local file at the root of the project
 
-To learn more about Next.js, take a look at the following resources:
+   ```
+   touch .env.local
+   ```
+2. configure your Sanity .ENV keys.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```
+   NEXT_PUBLIC_SANITY_PROJECT_ID="YOUR_KEY_GOES_HERE"
+   NEXT_PUBLIC_SANITY_DATASET="production"
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```
 
-## Deploy on Vercel
+   > ℹ️ **Note:** The project ID can be found in your Sanity dashboard.
+   >
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 4️⃣ Start the Development Server
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+#### Start Next.js Frontend:
+
+```
+npm run dev
+```
+
+The Next.js app will run at [ http://localhost:3000](http://localhost:3000 "Localhost 3000")
+
+## 🏗 Project Structure
+
+```
+blog-with-sanity/
+├── sanity/          # Sanity Studio (CMS)
+│   ├── schemaTypes/ # Schema definitions
+│   ├── lib/         # utilities and functions specific to Sanity
+│   ├── .env         # Sanity credentials
+│   ├── structure.ts # Where we create Singletons and personalise the Studio Layout
+├── app/             # Next.js App Router pages
+│   ├── layout.tsx   # Main layout
+│   ├── page.tsx     # Home page
+│   ├── (client)/    # All the code for frontend goes here
+│   │   ├── post/    # Blog post dynamic route
+│   ├── (sanity)/    # All the Studio code goes here
+├── components/      # UI components
+├── lib/             # utilities and functions
+├── public/          # Static assets
+├── .env.local       # project configuration
+├── ...
+```
+
+## 📝 Creating Blog Posts
+
+1. Open [http://localhost:3000/studio](`http://localhost:3000/studio` "Sanity Studio")
+2. Click **New Document** → **Post**
+3. Fill in the title, slug, and content.
+4. Publish the post.
+5. Visit [http://localhost:3000/](http://localhost:3000/ "localhost 3000") to see the post rendered.
+
+## 🚀 Deploying
+
+Vercel as the creators of NextJS have also created a seamless deployment service.
+
+Information on options can be found in the [NextJS documentation on deployment](https://nextjs.org/docs/pages/building-your-application/deploying "deploying a nextjs project")
+
+## 📚 Learn More
+
+* [Sanity Documentation](https://www.sanity.io/docs "Sanity Documentation")
+* [Next.js Documentation](https://nextjs.org/docs "NextJS Documentation")
+
+## 📜 License
+
+MIT License. Free to use and modify.
+
+---
+
+Happy coding! 🎉
