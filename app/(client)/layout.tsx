@@ -6,8 +6,9 @@ export default function ClientLayout({
 }>) {
   return (
    <>
+   {/* Navbar */}
    {children}
-   
+   {/* Footer */}
    </>
   );
 }
