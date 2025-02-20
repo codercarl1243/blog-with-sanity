@@ -6,7 +6,8 @@ export const GET_ALL_POSTS = groq`*[ _type == "post" ] | order(publishedAt){
     title,
       "image": {
         "asset": mainImage.asset,
-        "alt": coalesce(mainImage.alt, "")
+        "alt": coalesce(mainImage.alt, ""),
+        "lqip": mainImage.asset-> metadata.lqip
       },
       "slug": slug.current,
       author->{

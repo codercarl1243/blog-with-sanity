@@ -1,15 +1,9 @@
 import { urlFor } from "@/sanity/lib/image";
 import ImageComponent from "./image.component";
+import type { ImageProps } from "./image";
 
 
-export default function Image({asset, alt}){
+export default function Image({asset, alt, lqip}: ImageProps){
 
-
-    const imageUrl = urlFor(asset).url()
-
-
-
-
-    return <ImageComponent src={imageUrl} alt={alt}/>
+    return <ImageComponent src={urlFor(asset).url()} alt={alt} lqip={lqip} />
 }
-
