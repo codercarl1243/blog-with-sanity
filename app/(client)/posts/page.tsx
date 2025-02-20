@@ -15,7 +15,7 @@ export default async function PostsPage(){
                     return (
                         <div key={post._id}>
                             <p>{post.title}</p>
-                            <Image asset={post.image.asset} alt={post.image.alt} />
+                            <Image asset={post.image.asset} alt={post.image.alt} lqip={post.image.lqip} />
                         </div>
                     )
                 })}
