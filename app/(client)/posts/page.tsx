@@ -1,7 +1,6 @@
-import Image from "@/components/image";
-import { client } from "@/sanity/lib/client"
-import { GET_ALL_POSTS } from "@/sanity/lib/queries"
-
+import Image from '@/components/image';
+import {client} from '@/sanity/lib/client'
+import { GET_ALL_POSTS } from '@/sanity/lib/queries'
 
 export default async function PostsPage(){
 
@@ -9,7 +8,7 @@ export default async function PostsPage(){
 
     return (
         <div>
-            <h1>posts page</h1>
+            <h1>Post Page</h1>
 
             <div>
                 {posts.map(post => {
